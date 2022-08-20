@@ -1,0 +1,11 @@
+global:
+  scrape_interval:     15s
+
+scrape_configs:
+  - job_name: mongo_expoprter
+    static_configs:
+      - targets: ['192.168.1.150:9216']
+      # /sbin/ifconfig | grep  -A8  en0 | grep netmask get en0 ip and use it for a target 
+
+
+# https://github.com/grafana/grafana/issues/46434

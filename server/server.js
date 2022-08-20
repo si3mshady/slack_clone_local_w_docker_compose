@@ -25,6 +25,9 @@ app.use(cors())
 // db config 
 const connection = "mongodb://db:27017/slackchannels";
 // const connection = "mongodb://localhost:27017/slackchannels";
+// -mongodb.uri=mongodb://db:27017/slackchannels
+// mongodb_exporter --mongodb.uri=mongodb://localhost:27017/slackchannels
+
 
 mongoose.connect(connection, {
  
