@@ -1,6 +1,0 @@
---2022-08-20 09:40:31--  https://github.com/prometheus/prometheus/releases/download/v2.9.2/prometheus-2.9.2.linux
-Resolving github.com (github.com)... 140.82.114.4
-Connecting to github.com (github.com)|140.82.114.4|:443... connected.
-HTTP request sent, awaiting response... 404 Not Found
-2022-08-20 09:40:31 ERROR 404: Not Found.
-

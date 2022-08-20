@@ -47,14 +47,14 @@ mongoose.connect(connection, {
 // record = json object 
 
 
-app.get('/', cors(), (req,res) => {
+app.get('/', (req,res) => {
     console.log('connecting to route route "/"')
     res.status(200).send('Slack Clone')
 })
 
 
 
-app.post('/login',cors(), (req,res) => {
+app.post('/login', (req,res) => {
     
 
     const requestData = req.body
@@ -80,6 +80,8 @@ app.post('/login',cors(), (req,res) => {
 
 
                 }
+
+                
                 console.log(user)
 
                 const newUser = new userModel(user)
@@ -109,7 +111,7 @@ app.post('/login',cors(), (req,res) => {
 })
 
 
-app.get('/v1/channels/',cors(), (req,res) => {
+app.get('/v1/channels/', (req,res) => {
 
     console.log('connecting to route route "/channels"')
     slackChannelModel.find((err,data) => {
@@ -131,7 +133,7 @@ app.get('/v1/channels/',cors(), (req,res) => {
     } )
 })
 
-app.get('/v1/channels/find', cors(),(req,res) => {
+app.get('/v1/channels/find', (req,res) => {
 
 
     slackChannelModel.find((err,data) => {
@@ -157,7 +159,7 @@ app.get('/v1/channels/find', cors(),(req,res) => {
 
 
 // add channel 
-app.post('/v1/channels/add',cors(), (req,res) => {
+app.post('/v1/channels/add', (req,res) => {
     const newChannel = req.body
 
     slackChannelModel.create(newChannel, (err, data) => {
@@ -175,7 +177,7 @@ app.post('/v1/channels/add',cors(), (req,res) => {
 })
 
 
-app.post('/v1/channels/getChannelDetail',cors(), (req,res) => {
+app.post('/v1/channels/getChannelDetail', (req,res) => {
     const requestData = req.body
 
     slackChannelModel.findOne(requestData, (err, data) => {
@@ -191,7 +193,7 @@ app.post('/v1/channels/getChannelDetail',cors(), (req,res) => {
 })
 
 
-app.post('/newMessage',cors(), (req,res) => {
+app.post('/newMessage', (req,res) => {
    
 
     const messageContent = {
@@ -226,7 +228,7 @@ app.post('/newMessage',cors(), (req,res) => {
 
 
 
-app.post('/v1/channels/findMessage',cors(), (req,res) => {
+app.post('/v1/channels/findMessage', (req,res) => {
     const channel = req.body
 
 
@@ -250,7 +252,7 @@ app.post('/v1/channels/findMessage',cors(), (req,res) => {
 })
 
 
-app.get('/v1/channels/findMessage/:roomID',cors(), (req,res) => {  
+app.get('/v1/channels/findMessage/:roomID', (req,res) => {  
 
 
     const roomID = req.params.roomID
