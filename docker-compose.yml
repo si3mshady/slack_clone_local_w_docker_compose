@@ -2,7 +2,7 @@ version: "3.7"  # optional since v1.27.0
 services:
 
   grafana:
-    image: grafana/grafana-enterprise
+    image: grafana/grafana
     ports:
       - '3000:3000'
 
